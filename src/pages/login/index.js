@@ -38,6 +38,10 @@ const Login = () => {
             window.alert('Credenciais Inválidas')
         }
     }
+    function validaEmail(email) {
+        const emailRegex = /^([a-zA-Z][^<>\"!@[\]#$%¨&*()~^:;ç,\-´`=+{}º\|/\\?]{1,})@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return emailRegex.test(String(email).toLowerCase());
+    }
 
     return (
         <>
@@ -47,16 +51,16 @@ const Login = () => {
                     <Image src={img} />
                     <Fluter><Title>Login</Title></Fluter>
                     <div style={{ flexDirection: 'row', justifyContent: 'space-beween', alignSelf: 'center' }}>
-                        <h3>Logar pelo cpf?</h3>
-                        <button onClick={() => setIsTrue(!isTrue)} style={{ borderRadius: 100, borderWidth: 2, width: 10, height: 19, backgroundColor: isTrue ? orange : white }}>
+                        <h3>Logar com cpf</h3>
+                        <button onClick={() => setIsTrue(!isTrue)} style={{ marginTop:3,marginLeft:20 ,borderRadius: 100, borderWidth: 2, width: 10, height: 15, backgroundColor: isTrue ? orange : white }}>
                         </button>
                     </div>
                     <Forms>
                         {isTrue ?
                             <Input
                                 label="Insira seu E-mail / CPF"
-                                name="email"
-                                placeholder="e-mail / cpf"
+                                name="cpf"
+                                placeholder="999.999.999-99"
                                 placeholderColor="#b3b3b3"
                                 mask="999.999.999-99"
                                 onChange={({ target }) => setLogin(target.value)}
@@ -65,7 +69,12 @@ const Login = () => {
                             : <Input
                                 label="Insira seu E-mail / CPF"
                                 name="email"
-                                placeholder="e-mail / cpf"
+                                onBlur={() =>
+                                    validaEmail(login) === true
+                                      ? console.log('')
+                                      : window.alert('Digite um email válido')
+                                  }
+                                placeholder="joao@gmail.com"
                                 placeholderColor="#b3b3b3"
                                 onChange={({ target }) => setLogin(target.value)}
                             >

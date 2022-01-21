@@ -87,7 +87,8 @@ const Edit = () => {
 
                     <Input labelColor={white} label="Nome" name="nome" placeholder="nome" placeholderColor="#b3b3b3"  onChange={({ target }) => setNome(target.value)}>
                     </Input>
-                    <Input labelColor={white} label="Email" name="email" placeholder="email"  onBlur={() =>
+                    <Input labelColor={white} label="Email" name="email" placeholder="email"  
+                    onBlur={() =>
                         validaEmail(email) === true
                           ? console.log('')
                           : window.alert('Digite um email válido')
