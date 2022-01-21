@@ -22,7 +22,7 @@ export const Forms = styled(Form)`
     display: flex;
     width: 70%;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 5px;
     align-items:center;
 
     span{

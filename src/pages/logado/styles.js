@@ -3,12 +3,14 @@ import Background from '../../assets/home_dark.jpg';
 import colors from '../../styles/colors'
 import fonts from '../../styles/fonts'
 import { Form } from '@unform/web';
+import { shade } from 'polished';
+
 const { blue, orange, white, lightGray } = colors;
-const { DMSans400, DMSans700 } = fonts;
+const { DMSans400, DMSans700, DMSans500 } = fonts;
 export const Container = styled.div`
     position: relative;
     display: flex;
-    height: 200vh;
+    height: 100vh;
     width: 100vw;
     background-image: url(${Background});
     background-size: cover;
@@ -17,11 +19,10 @@ export const Container = styled.div`
     align-items:center;
 `
 export const Form1 = styled.div`
-    margin-top:40px;
     display: flex;
-    flex-direction: column;
-    width: 320px;
-    justify-content:center;
+    flex-direction: row;
+    width: 620px;
+    justify-content:space-between;
     align-items:center;
 `
 
@@ -31,11 +32,6 @@ export const Form2 = styled.div`
     width: 30vw;
     justify-content:center;
     align-items:center;
-`
-export const Title = styled.h1`
-    font-size:26px;
-    font-family: ${DMSans700};
-    color: ${white}
 `
 export const Fluter = styled.div`
     position: absolute;
@@ -83,5 +79,27 @@ span {
     margin-top: 0px;
     font-size: 25px;
 }
+`
+export const Button = styled.button`
+ background-color: ${orange};
+ color: white;
 
+ width: 270px;
+ height: 56px;
+ 
+ border: 0;
+ margin-top: 16px;
+ 
+ transition: background-color: 0.2s;
+ cursor: pointer;
+ ${DMSans500};
+ 
+ &:hover{
+    background-color: ${shade(0.1, orange)};
+ }
+
+`
+export const Title = styled.h1`
+ background-color: ${orange};
+color: white;
 `

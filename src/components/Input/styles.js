@@ -47,6 +47,9 @@ label {
   line-height: 1;
   padding-bottom: 0.5rem;
   margin-left: 10px;
-  color: ${subtitle}
+  ${(props) => props.labelColor &&
+    css`
+     color: ${props.labelColor}
+    `}
 }
 `

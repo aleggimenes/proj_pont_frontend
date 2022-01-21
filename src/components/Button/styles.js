@@ -13,9 +13,10 @@ export const ButtonContainer = styled.button`
 
  width: 100%;
  height: 56px;
+ margin-bottom:10px;
  
  border: 0;
- margin-top: 16px;
+ margin-top: 5px;
  
  transition: background-color: 0.2s;
  cursor: pointer;
@@ -24,5 +25,11 @@ export const ButtonContainer = styled.button`
  &:hover{
     background-color: ${shade(0.1, orange)};
  }
+
+`
+export const Title = styled.h1`
+ background-color: ${orange};
+color: black;
+
 
 `

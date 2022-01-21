@@ -8,10 +8,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
-width: 350px;
+width: 330px;
+margin-top: 50px;
 box-shadow: 0 0 3em black;
 align-self:center;
-
 background: ${white};
 padding-left: 40px 0px;
 
